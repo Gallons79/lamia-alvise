@@ -128,14 +128,6 @@ a {
   transition: transform 0.25s ease;
 }
 
-/* LANGUAGE TOGGLE */
-.lang-toggle {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-left: 20px;
-}
-
 .lang-toggle img {
   width: 24px;
   height: auto;
@@ -148,7 +140,6 @@ a {
   transform: scale(1.2);
   opacity: 1;
 }
-
 
 /* Optional: highlight active language */
 .lang-btn.active img {
@@ -187,6 +178,10 @@ a {
   padding: 10px 0;
   text-decoration: none;
   font-size: 1rem;
+}
+
+.mobile-nav.show {
+  display: flex;
 }
 
 /* HERO */
