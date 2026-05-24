@@ -6,60 +6,248 @@
   <title>The Room – Lamia Alvise</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <!-- header same as above -->
+
+  <!-- NAVBAR -->
   <header class="navbar">
     <div class="navbar-inner">
-      <div class="logo">Lamia Alvise</div>
+
+      <!-- LOGO + TEXT -->
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.svg" alt="Lamia Alvise logo" class="logo-img">
+        <span class="logo-text">LAMIA • ALVISE</span>
+      </a>
+
+      <!-- DESKTOP NAV -->
       <nav class="desktop-nav">
         <a href="index.html">Home</a>
         <a href="house.html">Stay</a>
         <a href="surroundings.html">Explore</a>
         <a href="contact.html">Contact</a>
+
+        <div class="lang-toggle">
+          <a href="room.html">
+            <img src="images/flag-uk.svg" alt="English">
+          </a>
+          <a href="room-it.html">
+            <img src="images/flag-it.svg" alt="Italiano">
+          </a>
+        </div>
       </nav>
+
+      <!-- HAMBURGER -->
       <button class="hamburger" id="hamburgerBtn">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
+
+      <!-- MOBILE NAV -->
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="house.html">Stay</a>
+        <a href="surroundings.html">Explore</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="lang-toggle">
+          <a href="room.html">
+            <img src="images/flag-uk.svg" alt="English">
+          </a>
+          <a href="room-it.html">
+            <img src="images/flag-it.svg" alt="Italiano">
+          </a>
+        </div>
+      </nav>
+
     </div>
-    <nav class="mobile-nav" id="mobileNav">
-      <a href="index.html">Home</a>
-      <a href="house.html">Stay</a>
-      <a href="surroundings.html">Explore</a>
-      <a href="contact.html">Contact</a>
-    </nav>
   </header>
 
-  <main class="page">
-    <section class="page-hero">
+  <!-- HERO -->
+  <section class="hero" style="background-image: url('images/room.png'); height: 60vh;">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
       <h1>The Room</h1>
-      <p>A cozy, bright space with stone details and soft textiles.</p>
-    </section>
+      <p>A bright and cozy space designed for rest.</p>
+    </div>
+  </section>
 
-    <section class="two-column">
-      <div>
-        <h2>Comfort</h2>
-        <p>
-          The room is designed for rest: a comfortable bed, natural fabrics,
-          and a calm palette inspired by the surrounding landscape.
-        </p>
-      </div>
-      <div>
-        <h2>Amenities</h2>
-        <ul>
-          <li>Queen bed</li>
-          <li>Ensuite bathroom</li>
-          <li>Linen & towels</li>
-          <li>Coffee/tea corner</li>
-          <li>Garden view</li>
-        </ul>
-      </div>
-    </section>
-  </main>
+  <!-- INTRO -->
+  <section class="intro" style="max-width: 800px;">
+    <h2>A Calm and Comfortable Retreat</h2>
+    <p>
+      This room offers a serene atmosphere inspired by the surrounding Apulian landscape.
+      Soft tones, natural fabrics, and handcrafted details create a warm and welcoming
+      environment — perfect for slow mornings and peaceful evenings.
+    </p>
+  </section>
 
+  <!-- COMFORT SECTION -->
+  <section class="intro" style="max-width: 800px; padding-top: 20px;">
+    <h2>Comfort</h2>
+    <p>
+      Designed with relaxation in mind, the room features thoughtful touches that enhance
+      your stay: gentle lighting, breathable linens, and a layout that balances simplicity
+      and elegance.
+    </p>
+  </section>
+
+  <!-- AMENITIES -->
+  <section style="
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px 40px;
+  ">
+    <h2 style="text-align: center; margin-bottom: 40px;">Amenities</h2>
+
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    ">
+
+      <!-- Amenity 1 -->
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <!-- Lucide: Bed -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" stroke-width="1.5" stroke="#6b7a3a" fill="none" viewBox="0 0 24 24">
+          <path d="M2 20v-6a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v6"/>
+          <path d="M2 10h20"/>
+          <path d="M6 14h.01"/>
+          <path d="M18 14h.01"/>
+        </svg>
+        <span>Queen-size bed</span>
+      </div>
+
+      <!-- Amenity 2 -->
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <!-- Lucide: Bath -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" stroke-width="1.5" stroke="#6b7a3a" fill="none" viewBox="0 0 24 24">
+          <path d="M2 12h20"/>
+          <path d="M7 12V5a2 2 0 1 1 4 0v7"/>
+          <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>
+        </svg>
+        <span>Private bathroom</span>
+      </div>
+
+      <!-- Amenity 3 -->
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <!-- Lucide: Coffee -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" stroke-width="1.5" stroke="#6b7a3a" fill="none" viewBox="0 0 24 24">
+          <path d="M3 13h13a4 4 0 0 0 0-8H3z"/>
+          <path d="M3 13v3a4 4 0 0 0 4 4h5a4 4 0 0 0 4-4v-3"/>
+        </svg>
+        <span>Coffee & tea corner</span>
+      </div>
+
+      <!-- Amenity 4 -->
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <!-- Lucide: Wifi -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" stroke-width="1.5" stroke="#6b7a3a" fill="none" viewBox="0 0 24 24">
+          <path d="M12 20h.01"/>
+          <path d="M2 8.82a15 15 0 0 1 20 0"/>
+          <path d="M5 12.5a10 10 0 0 1 14 0"/>
+          <path d="M8.5 16a5 5 0 0 1 7 0"/>
+        </svg>
+        <span>Free Wi‑Fi</span>
+      </div>
+
+      <!-- Amenity 5 -->
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <!-- Lucide: Snowflake -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" stroke-width="1.5" stroke="#6b7a3a" fill="none" viewBox="0 0 24 24">
+          <path d="M12 2v20"/>
+          <path d="m4.93 4.93 14.14 14.14"/>
+          <path d="m4.93 19.07 14.14-14.14"/>
+        </svg>
+        <span>Air conditioning</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section style="
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  ">
+    <h2 style="text-align: center; margin-bottom: 40px;">Gallery</h2>
+
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    ">
+
+      <!-- IMAGE 1 -->
+      <div style="
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      "
+      onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.12)';"
+      onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+        <img src="images/room1.png" alt="Room photo 1" style="
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        ">
+      </div>
+
+      <!-- IMAGE 2 -->
+      <div style="
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      "
+      onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.12)';"
+      onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+        <img src="images/room2.png" alt="Room photo 2" style="
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        ">
+      </div>
+
+      <!-- IMAGE 3 -->
+      <div style="
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      "
+      onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.12)';"
+      onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+        <img src="images/room3.png" alt="Room photo 3" style="
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        ">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <p>© 2026 Lamia Alvise – Apulia, Italy</p>
   </footer>
 
-  <script src="main.js"></script>
+  <!-- SCRIPT: hamburger toggle -->
+  <script>
+    const hamburger = document.getElementById("hamburgerBtn");
+    const mobileNav = document.getElementById("mobileNav");
+
+    hamburger.addEventListener("click", () => {
+      mobileNav.classList.toggle("show");
+      hamburger.classList.toggle("active");
+    });
+  </script>
+
 </body>
 </html>
