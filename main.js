@@ -3,6 +3,7 @@ const mobileNav = document.getElementById("mobileNav");
 
 hamburger.addEventListener("click", () => {
   mobileNav.classList.toggle("show");
+  hamburger.classList.toggle("active");
 });
 
 // Language selector
@@ -42,5 +43,3 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
     applyTranslations(lang);
   });
 });
-
-

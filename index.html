@@ -12,21 +12,22 @@
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="navbar-inner">
+
+      <!-- LOGO + TEXT -->
       <div class="logo">
         <a href="index.html" class="logo-link">
-            <img src="images/logo.svg" alt="Lamia Alvise logo" class="logo-img">
-            <span class="logo-text">LAMIA • ALVISE</span>
+          <img src="images/logo.svg" alt="Lamia Alvise logo" class="logo-img">
+          <span class="logo-text">LAMIA ALVISE</span>
         </a>
       </div>
 
-
+      <!-- DESKTOP NAV -->
       <nav class="desktop-nav">
         <a href="index.html" class="active">Home</a>
         <a href="house.html">Stay</a>
         <a href="surroundings.html">Explore</a>
         <a href="contact.html">Contact</a>
 
-        <!-- LANGUAGE TOGGLE -->
         <div class="lang-toggle">
           <a href="index.html">
             <img src="images/flag-uk.svg" alt="English">
@@ -37,31 +38,35 @@
         </div>
       </nav>
 
+      <!-- HAMBURGER -->
       <button class="hamburger" id="hamburgerBtn">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
+
+      <!-- MOBILE NAV (compact dropdown) -->
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="active">Home</a>
+        <a href="house.html">Stay</a>
+        <a href="surroundings.html">Explore</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="lang-toggle">
+          <a href="index.html">
+            <img src="images/flag-uk.svg" alt="English">
+          </a>
+          <a href="index-it.html">
+            <img src="images/flag-it.svg" alt="Italiano">
+          </a>
+        </div>
+      </nav>
+
     </div>
-
-    <!-- MOBILE NAV -->
-    <nav class="mobile-nav" id="mobileNav">
-      <a href="index.html" class="active">Home</a>
-      <a href="house.html">Stay</a>
-      <a href="surroundings.html">Explore</a>
-      <a href="contact.html">Contact</a>
-
-      <div class="lang-toggle">
-        <a href="index.html">
-          <img src="images/flag-uk.svg" alt="English">
-        </a>
-        <a href="index-it.html">
-          <img src="images/flag-it.svg" alt="Italiano">
-        </a>
-      </div>
-    </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" style="background-image: url('images/hero.png');">
     <div class="hero-overlay"></div>
     <div class="hero-text">
       <h1>Your Apulian Escape</h1>
@@ -105,51 +110,39 @@
   <!-- PREVIEW GRID -->
   <section class="preview-grid">
 
-    <!-- CARD 1 -->
     <a href="house.html" class="preview-card-link">
       <div class="preview-card">
-
         <div class="preview-img-wrapper">
           <img class="preview-img" src="images/house.png" alt="The House">
           <div class="preview-overlay"></div>
         </div>
-
         <h3>The House</h3>
         <p>Discover the charm of our stone lamia.</p>
         <span class="arrow">→</span>
-
       </div>
     </a>
 
-    <!-- CARD 2 -->
     <a href="room.html" class="preview-card-link">
       <div class="preview-card">
-
         <div class="preview-img-wrapper">
           <img class="preview-img" src="images/room.png" alt="The Room">
           <div class="preview-overlay"></div>
         </div>
-
         <h3>The Room</h3>
         <p>A cozy, bright space designed for comfort.</p>
         <span class="arrow">→</span>
-
       </div>
     </a>
 
-    <!-- CARD 3 -->
     <a href="surroundings.html" class="preview-card-link">
       <div class="preview-card">
-
         <div class="preview-img-wrapper">
           <img class="preview-img" src="images/surroundings.png" alt="The Surroundings">
           <div class="preview-overlay"></div>
         </div>
-
         <h3>The Surroundings</h3>
         <p>Beaches, towns, and countryside to explore.</p>
         <span class="arrow">→</span>
-
       </div>
     </a>
 
@@ -160,6 +153,16 @@
     <p>© 2026 Lamia Alvise – Apulia, Italy</p>
   </footer>
 
-  <script src="main.js"></script>
+  <!-- SCRIPT: hamburger toggle -->
+  <script>
+    const hamburger = document.getElementById("hamburgerBtn");
+    const mobileNav = document.getElementById("mobileNav");
+
+    hamburger.addEventListener("click", () => {
+      mobileNav.classList.toggle("show");
+      hamburger.classList.toggle("active");
+    });
+  </script>
+
 </body>
 </html>
