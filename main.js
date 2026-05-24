@@ -1,11 +1,9 @@
-const hamburgerBtn = document.getElementById("hamburgerBtn");
+const hamburger = document.getElementById("hamburgerBtn");
 const mobileNav = document.getElementById("mobileNav");
 
-if (hamburgerBtn && mobileNav) {
-  hamburgerBtn.addEventListener("click", () => {
-    mobileNav.classList.toggle("show");
-  });
-}
+hamburger.addEventListener("click", () => {
+  mobileNav.classList.toggle("show");
+});
 
 // Language selector
 let currentLang = localStorage.getItem("lang") || "en";
@@ -44,3 +42,5 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
     applyTranslations(lang);
   });
 });
+
+
