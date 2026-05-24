@@ -3,57 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Surroundings – Lamia Alvise</title>
+  <title>The Surroundings – Lamia Alvise</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+
+  <!-- NAVBAR -->
   <header class="navbar">
     <div class="navbar-inner">
-      <div class="logo">Lamia Alvise</div>
+
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.svg" alt="Lamia Alvise logo" class="logo-img">
+        <span class="logo-text">LAMIA • ALVISE</span>
+      </a>
+
       <nav class="desktop-nav">
-        <a href="index.html">Home</a>
         <a href="house.html">Stay</a>
         <a href="surroundings.html" class="active">Explore</a>
+        <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
+
+        <div class="lang-toggle">
+          <a href="surroundings.html"><img src="images/flag-uk.svg" alt="English"></a>
+          <a href="surroundings-it.html"><img src="images/flag-it.svg" alt="Italiano"></a>
+        </div>
       </nav>
+
       <button class="hamburger" id="hamburgerBtn">
         <span></span><span></span><span></span>
       </button>
+
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="house.html">Stay</a>
+        <a href="surroundings.html" class="active">Explore</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="lang-toggle">
+          <a href="surroundings.html"><img src="images/flag-uk.svg" alt="English"></a>
+          <a href="surroundings-it.html"><img src="images/flag-it.svg" alt="Italiano"></a>
+        </div>
+      </nav>
+
     </div>
-    <nav class="mobile-nav" id="mobileNav">
-      <a href="index.html">Home</a>
-      <a href="house.html">Stay</a>
-      <a href="surroundings.html" class="active">Explore</a>
-      <a href="contact.html">Contact</a>
-    </nav>
   </header>
 
-  <main class="page">
-    <section class="page-hero">
+  <!-- HERO -->
+  <section class="hero" style="background-image: url('images/surroundings-hero.png'); height: 60vh;">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
       <h1>The Surroundings</h1>
-      <p>Beaches, white towns, and olive groves within easy reach.</p>
-    </section>
+      <p>Discover Apulia’s landscapes, towns, and coastline.</p>
+    </div>
+  </section>
 
-    <section class="cards">
-      <article class="card">
-        <h2>Nearby Towns</h2>
-        <p>Ostuni, Cisternino, Martina Franca, and other historic centers.</p>
-      </article>
-      <article class="card">
-        <h2>Beaches</h2>
-        <p>Torre Guaceto, Costa Merlata, and crystal‑clear Adriatic waters.</p>
-      </article>
-      <article class="card">
-        <h2>Experiences</h2>
-        <p>Olive oil tastings, masserie restaurants, cycling routes, local markets.</p>
-      </article>
-    </section>
-  </main>
+  <!-- INTRO -->
+  <section class="intro" style="max-width: 800px;">
+    <h2>Explore the Area</h2>
+    <p>
+      Lamia Alvise is surrounded by the beauty of the Apulian countryside — a place where
+      olive groves, whitewashed towns, and crystal‑clear beaches are all within easy reach.
+    </p>
+  </section>
 
+  <!-- NEARBY TOWNS -->
+  <section class="two-column" style="
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  ">
+    <div class="image-block">
+      <img src="images/placeholder-town.png" alt="Nearby towns" style="width: 100%; border-radius: 12px;">
+    </div>
+
+    <div class="text-block" style="display: flex; flex-direction: column; justify-content: center;">
+      <h3>Nearby Towns</h3>
+      <p>
+        Explore charming Apulian towns such as Ostuni, Cisternino, and Martina Franca.
+        Wander through narrow alleys, admire whitewashed houses, and enjoy local cuisine
+        in traditional trattorias.
+      </p>
+    </div>
+  </section>
+
+  <!-- BEACHES -->
+  <section class="two-column" style="
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  ">
+    <div class="text-block" style="display: flex; flex-direction: column; justify-content: center;">
+      <h3>Beaches</h3>
+      <p>
+        The coastline offers sandy beaches, rocky coves, and crystal‑clear waters.
+        Whether you prefer quiet natural spots or serviced beach clubs, the area has
+        something for every taste.
+      </p>
+    </div>
+
+    <div class="image-block">
+      <img src="images/placeholder-beach.png" alt="Beaches" style="width: 100%; border-radius: 12px;">
+    </div>
+  </section>
+
+  <!-- EXPERIENCES -->
+  <section class="two-column" style="
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  ">
+    <div class="image-block">
+      <img src="images/placeholder-experience.png" alt="Experiences" style="width: 100%; border-radius: 12px;">
+    </div>
+
+    <div class="text-block" style="display: flex; flex-direction: column; justify-content: center;">
+      <h3>Experiences</h3>
+      <p>
+        Enjoy local experiences such as olive oil tastings, bike tours, cooking classes,
+        and visits to historic masserie. Apulia offers a rich blend of culture, nature,
+        and tradition.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <p>© 2026 Lamia Alvise – Apulia, Italy</p>
   </footer>
 
+  <!-- EXTERNAL SCRIPT -->
   <script src="main.js"></script>
+
 </body>
 </html>

@@ -13,57 +13,43 @@
   <header class="navbar">
     <div class="navbar-inner">
 
-      <!-- LOGO + TEXT -->
       <a href="index.html" class="logo-link">
         <img src="images/logo.svg" alt="Lamia Alvise logo" class="logo-img">
         <span class="logo-text">LAMIA • ALVISE</span>
       </a>
 
-      <!-- DESKTOP NAV -->
       <nav class="desktop-nav">
-        <a href="index.html">Home</a>
         <a href="house.html" class="active">Stay</a>
         <a href="surroundings.html">Explore</a>
+        <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
 
         <div class="lang-toggle">
-          <a href="house.html">
-            <img src="images/flag-uk.svg" alt="English">
-          </a>
-          <a href="house-it.html">
-            <img src="images/flag-it.svg" alt="Italiano">
-          </a>
+          <a href="house.html"><img src="images/flag-uk.svg" alt="English"></a>
+          <a href="house-it.html"><img src="images/flag-it.svg" alt="Italiano"></a>
         </div>
       </nav>
 
-      <!-- HAMBURGER -->
       <button class="hamburger" id="hamburgerBtn">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
 
-      <!-- MOBILE NAV -->
       <nav class="mobile-nav" id="mobileNav">
-        <a href="index.html">Home</a>
         <a href="house.html" class="active">Stay</a>
         <a href="surroundings.html">Explore</a>
+        <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
 
         <div class="lang-toggle">
-          <a href="house.html">
-            <img src="images/flag-uk.svg" alt="English">
-          </a>
-          <a href="house-it.html">
-            <img src="images/flag-it.svg" alt="Italiano">
-          </a>
+          <a href="house.html"><img src="images/flag-uk.svg" alt="English"></a>
+          <a href="house-it.html"><img src="images/flag-it.svg" alt="Italiano"></a>
         </div>
       </nav>
 
     </div>
   </header>
 
-  <!-- HERO (più sobrio rispetto alla homepage) -->
+  <!-- HERO -->
   <section class="hero" style="background-image: url('images/house.png'); height: 60vh;">
     <div class="hero-overlay"></div>
     <div class="hero-text">
@@ -72,7 +58,7 @@
     </div>
   </section>
 
-  <!-- MAIN CONTENT -->
+  <!-- INTRO -->
   <section class="intro" style="max-width: 800px;">
     <h2>Our Stone Lamia</h2>
     <p>
@@ -83,7 +69,7 @@
     </p>
   </section>
 
-  <!-- TWO-COLUMN LAYOUT (come nella tua versione originale) -->
+  <!-- EXTERIOR -->
   <section class="two-column" style="
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -92,21 +78,20 @@
     max-width: 1100px;
     margin: 0 auto;
   ">
-
-    <div>
+    <div class="image-block">
       <img src="images/house.png" alt="Exterior view" style="width: 100%; border-radius: 12px;">
     </div>
 
-    <div style="display: flex; flex-direction: column; justify-content: center;">
+    <div class="text-block" style="display: flex; flex-direction: column; justify-content: center;">
       <h3>Exterior</h3>
       <p>
         The lamia features traditional white stone, soft Mediterranean lines, and a
         private outdoor area surrounded by olive trees and dry stone walls.
       </p>
     </div>
-
   </section>
 
+  <!-- INTERIOR -->
   <section class="two-column" style="
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -115,8 +100,7 @@
     max-width: 1100px;
     margin: 0 auto;
   ">
-
-    <div style="display: flex; flex-direction: column; justify-content: center;">
+    <div class="text-block" style="display: flex; flex-direction: column; justify-content: center;">
       <h3>Interior</h3>
       <p>
         Inside, the lamia offers a cozy and bright atmosphere, with natural materials,
@@ -124,12 +108,12 @@
       </p>
     </div>
 
-    <div>
+    <div class="image-block">
       <img src="images/room.png" alt="Interior room" style="width: 100%; border-radius: 12px;">
     </div>
-
   </section>
 
+  <!-- SURROUNDINGS -->
   <section class="two-column" style="
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -138,19 +122,17 @@
     max-width: 1100px;
     margin: 0 auto;
   ">
-
-    <div>
+    <div class="image-block">
       <img src="images/surroundings.png" alt="Surroundings" style="width: 100%; border-radius: 12px;">
     </div>
 
-    <div style="display: flex; flex-direction: column; justify-content: center;">
+    <div class="text-block" style="display: flex; flex-direction: column; justify-content: center;">
       <h3>Surroundings</h3>
       <p>
         The lamia is immersed in a quiet rural landscape, with ancient olive trees,
         dry stone walls, and the warm light typical of the Apulian countryside.
       </p>
     </div>
-
   </section>
 
   <!-- FOOTER -->
@@ -158,7 +140,6 @@
     <p>© 2026 Lamia Alvise – Apulia, Italy</p>
   </footer>
 
-  <!-- SCRIPT: hamburger toggle -->
   <script>
     const hamburger = document.getElementById("hamburgerBtn");
     const mobileNav = document.getElementById("mobileNav");

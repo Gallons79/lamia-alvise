@@ -43,3 +43,26 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
     applyTranslations(lang);
   });
 });
+
+// AUTO-GALLERY LOADER
+const galleryContainer = document.getElementById("autoGallery");
+
+if (galleryContainer) {
+  fetch("images/gallery/gallery.json")
+    .then(response => response.json())
+    .then(data => {
+      data.photos.forEach(photo => {
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("square-photo");
+
+        const img = document.createElement("img");
+        img.src = `images/gallery/${photo}`;
+        img.alt = "Gallery photo";
+
+        wrapper.appendChild(img);
+        galleryContainer.appendChild(wrapper);
+      });
+    })
+    .catch(err => console.error("Gallery loading error:", err));
+}
+
