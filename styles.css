@@ -335,6 +335,65 @@ img {
 }
 
 /* --------------------------------------------------
+   HOUSE & SURROUNDINGS — LAYOUT DESKTOP + MOBILE
+-------------------------------------------------- */
+
+/* Layout desktop: due colonne, alternate */
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center; /* CENTRA verticalmente il testo */
+}
+
+/* Alternanza automatica: 
+   - le sezioni pari invertite (testo a sinistra, immagine a destra) */
+.two-column:nth-child(even) {
+  direction: rtl;
+}
+
+.two-column:nth-child(even) > * {
+  direction: ltr;
+}
+
+/* Immagini quadrate su desktop */
+.two-column .square-photo {
+  aspect-ratio: 1 / 1;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .two-column {
+    grid-template-columns: 1fr !important;
+    text-align: left;
+  }
+
+  /* Ordine mobile: immagine sopra, testo sotto */
+  .two-column .square-photo {
+    order: 1;
+    aspect-ratio: auto; /* niente quadrato su mobile */
+  }
+
+  .two-column .text-block {
+    order: 2;
+    margin-top: 10px;
+  }
+
+    /* Mantiene quadrata solo l'immagine surroundings.png anche su mobile */
+    .keep-square-mobile {
+    aspect-ratio: 1 / 1 !important;
+    }
+
+    .keep-square-mobile img {
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover;
+    }
+}
+
+/* --------------------------------------------------
    GALLERY
 -------------------------------------------------- */
 
