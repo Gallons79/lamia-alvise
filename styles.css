@@ -369,12 +369,17 @@ img {
   .two-column {
     grid-template-columns: 1fr !important;
     text-align: left;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   /* Ordine mobile: immagine sopra, testo sotto */
   .two-column .square-photo {
     order: 1;
     aspect-ratio: auto; /* niente quadrato su mobile */
+    margin-bottom: 20px; /* spazio tra immagine e testo */
+    margin: 0 auto 24px; /* centrata orizzontalmente */
+    width: 100%;
   }
 
   .two-column .text-block {
