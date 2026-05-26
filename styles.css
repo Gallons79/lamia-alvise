@@ -1,17 +1,25 @@
-/* BASIC RESET */
-body {
+/* --------------------------------------------------
+   RESET & BASE
+-------------------------------------------------- */
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   color: #333;
   background-color: #faf8f4;
+  line-height: 1.6;
 }
 
-h1 {
+h1, h2, h3 {
   margin: 0;
 }
 
 h2, h3 {
-  margin: 0;
   color: #989515;
 }
 
@@ -20,7 +28,15 @@ a {
   text-decoration: none;
 }
 
-/* NAVBAR */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* --------------------------------------------------
+   NAVBAR
+-------------------------------------------------- */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -31,20 +47,18 @@ a {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 10;
-  overflow: visible;
 }
 
 .navbar-inner {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
-/* LOGO + TEXT */
+/* LOGO */
+
 .logo-link {
   display: flex;
   align-items: center;
@@ -53,8 +67,6 @@ a {
 
 .logo-img {
   height: 63px;
-  width: auto;
-  object-fit: contain;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
@@ -67,36 +79,33 @@ a {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  white-space: nowrap;
-  min-width: 0;
   font-size: clamp(1.2rem, 5vw, 2.25rem);
   color: #989515;
 }
 
 /* DESKTOP NAV */
+
 .desktop-nav {
   display: flex;
   gap: 48px;
   align-items: center;
 }
 
-/* MENU BASE COLOR → NERO */
 .desktop-nav a {
   color: #000;
+  transition: color 0.25s ease;
 }
 
-/* HOVER → VERDE, SENZA UNDERLINE */
 .desktop-nav a:hover {
   color: #989515;
-  text-decoration: none;
 }
 
-/* ACTIVE → LINEA VERDE */
 .desktop-nav a.active {
   border-bottom: 2px solid #989515;
 }
 
 /* LANGUAGE TOGGLE */
+
 .lang-toggle {
   display: flex;
   align-items: center;
@@ -114,7 +123,10 @@ a {
   opacity: 1;
 }
 
-/* HAMBURGER */
+/* --------------------------------------------------
+   MOBILE NAV
+-------------------------------------------------- */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -122,54 +134,45 @@ a {
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 9999;
 }
 
 .hamburger span {
   width: 28px;
   height: 3px;
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
   background-color: #989515;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* HAMBURGER → X */
 .hamburger.active span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
-  opacity: 0;
+  opacity: 0 !important;
+  transform: scaleX(0) !important;
 }
 
 .hamburger.active span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* MOBILE NAV — compact dropdown */
 .mobile-nav {
   position: absolute;
   top: 100%;
   right: 0;
-
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-
   border-radius: 12px;
-
-  box-shadow:
-    inset 0 0 12px rgba(255, 255, 255, 0.55),
-    0 6px 20px rgba(0,0,0,0.12);
-
-  border: 1px solid rgba(255, 255, 255, 0.4);
-
   padding: 12px 20px;
   display: none;
   flex-direction: column;
   gap: 10px;
   min-width: 160px;
-  z-index: 9998;
+  box-shadow:
+    inset 0 0 12px rgba(255, 255, 255, 0.55),
+    0 6px 20px rgba(0,0,0,0.12);
 }
 
 .mobile-nav.show {
@@ -179,22 +182,21 @@ a {
 
 .mobile-nav a {
   padding: 6px 0;
-  white-space: nowrap;
   color: #000;
 }
 
-/* MOBILE HOVER → VERDE, SENZA UNDERLINE */
 .mobile-nav a:hover {
   color: #989515;
-  text-decoration: none;
 }
 
-/* MOBILE ACTIVE → LINEA VERDE */
 .mobile-nav a.active {
   border-bottom: 2px solid #989515;
 }
 
-/* HERO */
+/* --------------------------------------------------
+   HERO
+-------------------------------------------------- */
+
 .hero {
   height: 100vh;
   background-size: cover;
@@ -224,14 +226,30 @@ a {
   margin: 10px 0 20px;
 }
 
+/* --------------------------------------------------
+   CTA BUTTON
+-------------------------------------------------- */
+
 .cta {
   padding: 12px 24px;
   background: #989515;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 4px; /* come in index */
+  font-weight: 600;
+  font-size: 1rem; /* stessa dimensione del testo del menu */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
 }
 
-/* INTRO */
+.cta:hover {
+  background-color: #7c7a12; /* solo cambio colore */
+}
+
+/* --------------------------------------------------
+   INTRO
+-------------------------------------------------- */
+
 .intro {
   text-align: center;
   padding: 80px 20px;
@@ -239,7 +257,10 @@ a {
   margin: 0 auto;
 }
 
-/* HIGHLIGHTS */
+/* --------------------------------------------------
+   HIGHLIGHTS
+-------------------------------------------------- */
+
 .highlights {
   display: flex;
   justify-content: center;
@@ -263,17 +284,15 @@ a {
   transform: scale(1.12);
 }
 
-/* PREVIEW GRID */
+/* --------------------------------------------------
+   PREVIEW GRID
+-------------------------------------------------- */
+
 .preview-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   padding: 60px 40px 80px;
-}
-
-.preview-card-link {
-  display: block;
-  color: inherit;
 }
 
 .preview-card {
@@ -285,13 +304,12 @@ a {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.preview-card-link:hover .preview-card {
+.preview-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
 .preview-img-wrapper {
-  position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
@@ -316,23 +334,10 @@ a {
   }
 }
 
-.preview-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.08);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+/* --------------------------------------------------
+   GALLERY
+-------------------------------------------------- */
 
-.preview-card-link:hover .preview-overlay {
-  opacity: 1;
-}
-
-.preview-card-link:hover .preview-img {
-  transform: scale(1.03);
-}
-
-/* GALLERY */
 .square-photo {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -352,17 +357,48 @@ a {
   object-fit: cover;
 }
 
-/* CONTACTS */
+/* --------------------------------------------------
+   CONTACT PAGE
+-------------------------------------------------- */
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr; /* colonna centrale più stretta */
+  column-gap: 40px; /* riduce la distanza tra le due parti */
+  max-width: 900px; /* restringe l’intera area per avvicinare i contenuti */
+  margin: 0 auto;
+  padding: 60px 20px;
+  position: relative;
+}
+
+
+/* LINEA VERTICALE DI SEPARAZIONE */
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 40px;              /* parte un po' sotto il titolo/intro */
+  bottom: 40px;           /* finisce un po' sopra il fondo */
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background-color: #989515;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+
+/* FORM A SINISTRA */
 .contact-form {
+  grid-column: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: flex-end;
+  align-items: flex-start; /* bottone allineato a sinistra */
 }
 
 .contact-form label {
   width: 100%;
-  max-width: 280px;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   font-weight: 500;
@@ -371,29 +407,183 @@ a {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
+  max-width: 420px; /* garantisce larghezza massima */
   padding: 10px 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 16px;
+  background: #fff;
 }
 
 .contact-form .cta {
   width: 280px;
   text-align: center;
-  padding: 12px 24px;
-  background: #989515;
-  color: #fff;
-  border-radius: 4px;
 }
 
-/* FOOTER */
+/* INFO A DESTRA */
+.contact-info {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  stroke: #989515;
+  flex-shrink: 0;
+}
+
+/* MAPPA */
+.map-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* MOBILE VERSION */
+@media (max-width: 800px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  /* Rimuove la linea verticale su mobile */
+  .contact-section::before {
+    display: none;
+  }
+
+  .contact-form {
+    grid-column: 1;
+    align-items: center;
+  }
+
+  .contact-form label {
+    text-align: left;
+    display: block;
+  }
+
+  /* LINEA ORIZZONTALE PRIMA DI "DIRECT CONTACTS" */
+  .contact-info {
+    grid-column: 1;
+    align-items: center;
+    border-top: 2px solid #989515;
+    padding-top: 30px;
+    margin-top: 10px;
+  }
+
+  .map-container {
+    margin-top: 20px;
+  }
+}
+
+
+/* --------------------------------------------------
+   LITEPICKER — COLORI PERSONALIZZATI
+-------------------------------------------------- */
+
+.litepicker {
+  font-family: "Inter", sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* Giorni selezionati (check-in e check-out) */
+.litepicker .container__days .day-item.is-start-date,
+.litepicker .container__days .day-item.is-end-date {
+  background-color: #989515 !important;
+  color: #fff !important;
+  border-radius: 6px;
+}
+
+/* Range intermedio */
+.litepicker .container__days .day-item.is-in-range {
+  background-color: rgba(152, 149, 21, 0.20) !important;
+  color: #333;
+}
+
+/* Hover sui giorni (generale) */
+.litepicker .container__days .day-item:hover {
+  border: 1px solid #989515 !important;
+  background-color: rgba(152, 149, 21, 0.20) !important;
+  color: #000 !important;
+}
+
+/* Hover sui giorni che sono anche in range */
+.litepicker .container__days .day-item.is-in-range:hover {
+  border: 1px solid #989515 !important;
+  background-color: rgba(152, 149, 21, 0.30) !important;
+}
+
+/* Bordo del giorno attivo (focus tastiera) */
+.litepicker .container__days .day-item.is-highlighted {
+  border: 1px solid #989515 !important;
+}
+
+/* FRECCE MESE LITEPICKER (versione corretta) */
+.litepicker .month-item-header .button-previous-month,
+.litepicker .month-item-header .button-next-month {
+  color: #989515 !important;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hover sulle frecce */
+.litepicker .month-item-header .button-previous-month:hover,
+.litepicker .month-item-header .button-next-month:hover {
+  background-color: rgba(152, 149, 21, 0.15) !important;
+  color: #989515 !important;
+}
+
+/* FRECCE MESE — COLORAZIONE SVG */
+.litepicker .month-item-header .button-previous-month svg path,
+.litepicker .month-item-header .button-next-month svg path {
+  fill: #989515 !important;
+}
+
+/* Hover frecce — SVG verde + sfondo verde chiaro */
+.litepicker .month-item-header .button-previous-month:hover svg path,
+.litepicker .month-item-header .button-next-month:hover svg path {
+  fill: #989515 !important;
+}
+
+.litepicker .month-item-header .button-previous-month:hover,
+.litepicker .month-item-header .button-next-month:hover {
+  background-color: rgba(152, 149, 21, 0.15) !important;
+}
+
+/* Rimuove il contorno blu e applica quello verde */
+.litepicker .container__days .day-item:hover,
+.litepicker .container__days .day-item:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(152, 149, 21, 0.35) !important;
+  border: 1px solid #989515 !important;
+  background-color: rgba(152, 149, 21, 0.20) !important;
+}
+
+
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
+
 footer {
   text-align: center;
   padding: 40px 20px;
   color: #666;
 }
 
-/* RESPONSIVE */
+/* --------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------- */
+
 @media (max-width: 900px) {
   .desktop-nav {
     display: none;
@@ -409,20 +599,9 @@ footer {
   }
 }
 
-@media (max-width: 900px) {
-  .two-column {
-    grid-template-columns: 1fr !important;
-  }
-
-  .two-column .image-block {
-    order: 1;
-  }
-
-  .two-column .text-block {
-    order: 2;
-    margin-top: 20px;
-  }
-}
+/* --------------------------------------------------
+   ANIMATIONS
+-------------------------------------------------- */
 
 @keyframes fadeDown {
   from {

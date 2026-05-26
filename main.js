@@ -66,3 +66,65 @@ if (galleryContainer) {
     .catch(err => console.error("Gallery loading error:", err));
 }
 
+// DATE RANGE PICKER (Litepicker)
+document.addEventListener("DOMContentLoaded", () => {
+  const dateInput = document.getElementById("date-range");
+  if (!dateInput) return;
+
+  const isMobile = window.matchMedia("(max-width: 600px)").matches;
+
+  const picker = new Litepicker({
+    element: dateInput,
+    singleMode: false,
+    numberOfMonths: isMobile ? 1 : 2,
+    numberOfColumns: isMobile ? 1 : 2,
+    format: 'DD MMM YYYY',
+    minDate: new Date(),
+    autoApply: true,
+    tooltipText: {
+      one: 'night',
+      other: 'nights'
+    },
+    tooltipNumber: (totalDays) => totalDays - 1
+  });
+});
+
+
+// EMAILJS FORM SUBMISSION
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+
+  if (!form) return;
+
+  // Inizializza EmailJS
+  emailjs.init("DU2OBUrvxSvRDvcaC"); // <-- incolla qui la tua Public Key
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    status.textContent = "Sending...";
+
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      dates: form.dates.value,
+      message: form.message.value
+    };
+
+    try {
+      const response = await emailjs.send(
+        "service_ebjsdpa",   // <-- incolla qui il tuo Service ID
+        "template_vbedp48",  // <-- incolla qui il tuo Template ID
+        formData
+      );
+
+      status.textContent = "Your request has been sent successfully!";
+      form.reset();
+
+    } catch (error) {
+      status.textContent = "There was an error. Please try again.";
+    }
+  });
+});
+
