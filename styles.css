@@ -644,6 +644,51 @@ footer {
   color: #666;
 }
 
+/* Social section */
+.footer-social {
+  margin-top: 20px;
+  padding-top: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center; /* centra verticalmente testo + icona */
+  gap: 12px;
+}
+
+/* Label: dimensione normale */
+.footer-social-label {
+  font-weight: 500;
+  color: #989515;
+  font-size: 1rem; /* torna alla dimensione normale */
+  line-height: 1;  /* evita che il testo sembri più alto dell’icona */
+  display: flex;
+  align-items: center; /* centratura perfetta */
+}
+
+/* Icona Instagram (rimane 1.5×) */
+.footer-social-icon svg {
+  width: 33px;   /* 22 × 1.5 */
+  height: 33px;
+  stroke: #989515;
+  stroke-width: 2;
+  fill: none;
+  display: block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-social-icon:hover svg {
+  transform: scale(1.12);
+  opacity: 0.85;
+}
+
+/* Linea sotto la sezione social */
+.footer-separator {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 18px 0 20px;
+}
+
 /* --------------------------------------------------
    RESPONSIVE
 -------------------------------------------------- */
