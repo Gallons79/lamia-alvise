@@ -32,14 +32,10 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const lang = btn.dataset.lang;
 
-    // Update active state
     document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
-    // Save preference
     localStorage.setItem("lang", lang);
-
-    // Apply translations
     applyTranslations(lang);
   });
 });
@@ -90,6 +86,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// ---------------------------------------------------------
+// ✅ NUOVA SEZIONE: Gestione Adulti / Bambini / Età bambino
+// ---------------------------------------------------------
+
+document.addEventListener("DOMContentLoaded", () => {
+  const childrenSelect = document.getElementById("children");
+  const childAgeWrapper = document.getElementById("child-age-wrapper");
+  const childAgeSelect = document.getElementById("child_age");
+
+  if (childrenSelect && childAgeWrapper && childAgeSelect) {
+
+    // Popola età bambino (0–17)
+    for (let i = 0; i <= 17; i++) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = i;
+      childAgeSelect.appendChild(option);
+    }
+
+    // Mostra/nasconde il campo età bambino
+    childrenSelect.addEventListener("change", () => {
+      if (childrenSelect.value === "1") {
+        childAgeWrapper.style.display = "block";
+        childAgeSelect.required = true;
+      } else {
+        childAgeWrapper.style.display = "none";
+        childAgeSelect.required = false;
+        childAgeSelect.value = "";
+      }
+    });
+  }
+});
+
+
 // EMAILJS FORM SUBMISSION
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
@@ -97,8 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!form) return;
 
-  // Inizializza EmailJS
-  emailjs.init("DU2OBUrvxSvRDvcaC"); // <-- incolla qui la tua Public Key
+  emailjs.init("DU2OBUrvxSvRDvcaC"); // Public Key
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -109,22 +138,28 @@ document.addEventListener("DOMContentLoaded", () => {
       name: form.name.value,
       email: form.email.value,
       dates: form.dates.value,
+      adults: form.adults?.value || "",
+      children: form.children?.value || "",
+      child_age: form.child_age?.value || "",
       message: form.message.value
     };
 
     try {
-      const response = await emailjs.send(
-        "service_ebjsdpa",   // <-- incolla qui il tuo Service ID
-        "template_vbedp48",  // <-- incolla qui il tuo Template ID
+      await emailjs.send(
+        "service_ebjsdpa",
+        "template_vbedp48",
         formData
       );
 
       status.textContent = "Your request has been sent successfully!";
       form.reset();
 
+      // Nasconde il campo età bambino dopo reset
+      const childAgeWrapper = document.getElementById("child-age-wrapper");
+      if (childAgeWrapper) childAgeWrapper.style.display = "none";
+
     } catch (error) {
       status.textContent = "There was an error. Please try again.";
     }
   });
 });
-
