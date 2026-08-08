@@ -25,6 +25,7 @@
         <a href="house-en.html">Stay</a>
         <a href="surroundings-en.html">Explore</a>
         <a href="gallery-en.html">Gallery</a>
+        <a href="pricing-en.html">Pricing</a>
         <a href="contact-en.html" class="active">Contact</a>
 
         <div class="lang-toggle">
@@ -40,6 +41,7 @@
         <a href="house-en.html">Stay</a>
         <a href="surroundings-en.html">Explore</a>
         <a href="gallery-en.html">Gallery</a>
+        <a href="pricing-en.html">Pricing</a>
         <a href="contact-en.html" class="active">Contact</a>
 
         <div class="lang-toggle">
@@ -87,6 +89,29 @@
       <label>
         Dates
         <input type="text" id="date-range" name="dates" placeholder="Select dates" readonly />
+      </label>
+
+      <div class="row-two-fields">
+        <label>
+          Adults
+          <select name="adults" id="adults" class="small-select" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </label>
+
+        <label>
+          Childern
+          <select name="children" id="children" class="small-select" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+          </select>
+        </label>
+      </div>
+
+      <label id="child-age-wrapper" style="display: none;">
+        Child age
+        <select name="child_age" id="child_age" class="small-select"></select>
       </label>
 
       <label>

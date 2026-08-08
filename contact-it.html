@@ -25,6 +25,7 @@
         <a href="house-it.html">Soggiorna</a>
         <a href="surroundings-it.html">Esplora</a>
         <a href="gallery-it.html">Galleria</a>
+        <a href="pricing-it.html">Prezzi</a>
         <a href="contact-it.html" class="active">Contatti</a>
 
         <div class="lang-toggle">
@@ -40,6 +41,7 @@
         <a href="house-it.html">Soggiorna</a>
         <a href="surroundings-it.html">Esplora</a>
         <a href="gallery-it.html">Galleria</a>
+        <a href="pricing-it.html">Prezzi</a>
         <a href="contact-it.html" class="active">Contatti</a>
 
         <div class="lang-toggle">
@@ -73,7 +75,7 @@
 
     <!-- CONTACT FORM -->
     <form class="contact-form" id="contactForm">
-  
+
       <label>
         Nome
         <input type="text" name="name" required />
@@ -89,15 +91,37 @@
         <input type="text" id="date-range" name="dates" placeholder="Seleziona le date" readonly />
       </label>
 
-      <label>
-        Messaggio
-        <textarea name="message" rows="6"></textarea>
+      <div class="row-two-fields">
+        <label>
+          Adulti
+          <select name="adults" id="adults" class="small-select" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </label>
+
+        <label>
+          Bambini
+          <select name="children" id="children" class="small-select" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+          </select>
+        </label>
+      </div>
+
+      <label id="child-age-wrapper" style="display: none;">
+        Età del bambino
+        <select name="child_age" id="child_age" class="small-select"></select>
       </label>
+        
+        <label>
+          Messaggio
+          <textarea name="message" rows="6"></textarea>
+        </label>
 
-      <button type="submit" class="cta">Invia Richiesta</button>
+        <button type="submit" class="cta">Invia Richiesta</button>
 
-      <p id="formStatus" class="form-status"></p>
-
+        <p id="formStatus" class="form-status"></p>
     </form>
 
     <!-- CONTACT INFO -->
